@@ -2,9 +2,8 @@
 /*********BOSCH BEA PROGRAM SKELETON DEMO CODE************/
 /*********************************************************/
 
-#ifndef _DCM_RDBI_H
-#define _DCM_RDBI_H
-
 #include "dcm.h"
-
-#endif
+/*for further services please add service header here*/
+#include "dcm_rdbi.h"
+#include "dcm_wdbi.h"
+#include "dcm_seca.h"
