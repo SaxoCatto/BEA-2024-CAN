@@ -1,15 +1,15 @@
 # BEA-2024-CAN
 
 - This is for Boschs' Embedded Academy course. 
-- If done correctly, it is most likely a teamwork effort. But I will have to post some part here that I did solely, like CAN communication.
+- If done correctly, it is most likely a teamwork effort. But I will have to post some part here that I did most of the work, like CAN communication.
   
 ## Requirements
 
 ### Hardware
 
-- CorexxxR kit
-- OpenX05R-C kit
-- You know how to connect those two boards
+- CorexxxR kit: [here](https://www.waveshare.com/core405r.htm)
+- OpenX05R-C kit: [here](https://usermanual.wiki/Document/OpenX05RCUserManual20.1046741581.pdf)
+- You know exactly how to connect those two boards.
 
 ### Software
 
@@ -18,5 +18,6 @@
 
 ## Demo
 
-- There will be a final "Media" folder if I manage to finish this.
-- Insert picture here.
+- Check "Media" folder for some demo videos. And I will add a assessment list.
+![ApplicationFrameHost_itfhB8RLAs](https://github.com/user-attachments/assets/98c1d114-1e0b-4161-af49-37e1effe5932)
+
