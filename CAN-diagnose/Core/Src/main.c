@@ -63,7 +63,7 @@ uint16_t NumBytesReq = 0;
 uint8_t  REQ_BUFFER  [4096]; // xem main.h
 uint8_t  REQ_1BYTE_DATA;
 uint16_t tester_ID=0x712;
-uint16_t ECU_ID=0x7A2;
+uint16_t ECU_ID=0x78;
 uint16_t ECU_IDtmp;
 uint8_t enb2E=0x00;
 uint8_t check =0x00;
@@ -555,7 +555,7 @@ void readFromTester(uint8_t* req_tester, uint16_t len, uint8_t* data_tx)
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 {
 	HAL_CAN_GetRxMessage(&hcan1, CAN_RX_FIFO0, &CAN1_pHeaderRx, CAN1_DATA_RX);
-	char buffer3[9] = "CAN1RX\n";
+	char buffer3[9] = "CAN 1 RX\n";
 	USART3_SendString((unsigned char *)buffer3);
 	fifo=0;
 	PrintCANLog(tester_ID, CAN1_DATA_RX);
@@ -563,7 +563,7 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 void HAL_CAN_RxFifo1MsgPendingCallback(CAN_HandleTypeDef *hcan)
 {
 	HAL_CAN_GetRxMessage(&hcan2, CAN_RX_FIFO1, &CAN2_pHeaderRx, CAN2_DATA_RX);
-	char buffer4[9] = "CAN2RX\n";
+	char buffer4[9] = "CAN 2 RX\n";
 	USART3_SendString((unsigned char *)buffer4);
 	fifo=1;
 	PrintCANLog(ECU_ID, CAN2_DATA_RX);
@@ -820,6 +820,35 @@ uint8_t *cal_key(uint8_t Tx_data[], uint8_t data[])
   Tx_data[6] = data[6] + data[3];
   return Tx_data;
 }
+
+/* To calculate, make one and use code below. All 1s was used for saveseed[] if i am correct.
+
+#include <stdio.h>
+#include <stdint.h>
+
+void cal_key(uint8_t Tx_data[], uint8_t data[])
+{
+  Tx_data[0] = data[0] ^ data[1];
+  Tx_data[1] = data[1] + data[2];
+  Tx_data[2] = data[2] ^ data[3];
+  Tx_data[3] = data[3] + data[0];
+}
+
+int main()
+{
+
+    uint8_t saveseed[4]= {0x46, 0xDB, 0xF1, 0xB8};
+    uint8_t a[4]= {0x46, 0xDB, 0xF1, 0xB8};
+    cal_key(a,saveseed);
+    for(uint8_t j=0;j<4;j++)
+    {
+        printf("%02x ",a[j]);
+    }
+    return 0;
+}
+
+*/
+
 uint16_t get_DID(uint8_t data[])
 {
   uint16_t temp = data[2];
