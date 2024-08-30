@@ -2,6 +2,7 @@
 
 - This is for Boschs' Embedded Academy course. 
 - If done correctly, it is most likely a teamwork effort. But I will have to post some part here that I did most of the work, like CAN communication.
+- You might have to use LibreOffice suite to open it. Microsoft do be proprietary.
   
 ## Requirements
 
@@ -18,6 +19,7 @@
 
 ## Demo
 
-- Check "Media" folder for some demo videos. And I will add a assessment list.
+- Check "Media" folder for some demo videos. And the assessment list aka the excel file.
+- The excel file is not 100% correct, for I was doing it hastily. Any points are good points here.
 ![ApplicationFrameHost_itfhB8RLAs](https://github.com/user-attachments/assets/98c1d114-1e0b-4161-af49-37e1effe5932)
 
